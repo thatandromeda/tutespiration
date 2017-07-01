@@ -134,7 +134,7 @@
           <header class="header-site header-slim" role="banner">
             <div class="wrap-header-core">
               <h1 class="name-site group nav-logo">
-                <img src="static/img/geodesic.png">
+                <img src="/static/img/geodesic.png">
                 'tutespiration
               </h1>
             </div>
@@ -156,6 +156,8 @@
                 &lt;Photo by <a href="https://unsplash.com/@{{ credit_userid }}?utm_source={{ client_id }}&utm_medium=referral&utm_campaign=api-credit">{{ credit_name }}</a> / <a href="https://unsplash.com?utm_source=Tutespiration&utm_medium=referral&utm_campaign=api-credit">Unsplash</a>&gt;
                 &mdash;
                 &lt;<a href="{{ quote.url }}">read the thesis!</a>&gt;
+                &mdash;
+                &lt;<a href="{{ request.path }}">permalink</a> (sharing is caring)&gt;
               </div>
             </main>
           </div>
@@ -167,7 +169,7 @@
       <div class="wrap-outer-header layout-band layout-band-form">
         <div class="wrap-content layout-3q1q">
           <div id="search-all">
-            <form class="form search-bento" method="post">
+            <form class="form search-bento" method="post" action="/">
               {% csrf_token %}
               <label for="searchinput">Search MIT theses...for inspiration</label>
               <div class="wrap-flex">
