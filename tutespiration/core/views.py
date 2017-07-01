@@ -14,7 +14,7 @@ class Tutespiration(TemplateView):
     fonts = ["'Kaushan Script', cursive", "'Sue Ellen Francisco', cursive",
              "'Qwigley', cursive", "'Shadows Into Light', cursive"]
 
-    def get_response():
+    def get_response(self):
         api_url = 'https://api.unsplash.com/photos/random'
         params = dict(
             orientation='landscape',
