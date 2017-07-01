@@ -1,7 +1,7 @@
 # tutespiration
 [tutespiration.herokuapp.com](https://tutespiration.herokuapp.com)
 
-We were all liking [Inspirobot](https://inspirobot.me) on Twitter and [my coworker @aamcnamara thought it would be funny](https://twitter.com/aamcnamara/status/880826274662449152) if you got a free inspirational poster with every MIT libraries catalog search.
+We were all liking [Inspirobot](https://inspirobot.me) on Twitter and [my coworker @aamcnamara thought it would be funny](https://twitter.com/aamcnamara/status/880826274662449152) if you got a free inspirational poster with every MIT Libraries catalog search.
 
 I can't do that(*) but now we can pretend I did; you can search the "catalog" and get a lovely inspirational poster with a quote from a real MIT thesis. [Here's one of my favorites.](https://tutespiration.herokuapp.com/1/11566/hAV_4Cl-jJg/)
 
