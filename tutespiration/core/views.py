@@ -43,21 +43,32 @@ class Tutespiration(TemplateView):
     def get_quote(self, query):
         quotes = Quote.objects.filter(text__icontains=query)
         num = quotes.count()
-        which = random.randint(0, num)
-        return quotes[which]
+        if num:
+            which = random.randint(0, num - 1)
+            return quotes[which]
+        else:
+            return None
 
 
     def post(self, request, *args, **kwargs):
         query = request.POST['query']
         quote = self.get_quote(query)
+        if not quote:
+            return self.render_to_response(self.get_context_data(noquote=True))
+
         font_index = random.randint(0, len(self.fonts))
         font = self.fonts[font_index]
+        try:
+            photo = self.get_photo()
+        except:
+            return self.render_to_response(self.get_context_data(fail=True))
+
         return self.render_to_response(self.get_context_data(
             quote=quote,
             font=mark_safe(font),
             client_id=API_CLIENT_ID,
             font_index=font_index,
-            ** self.get_photo()))
+            **photo))
 
 
     def render_to_response(self, context, **response_kwargs):

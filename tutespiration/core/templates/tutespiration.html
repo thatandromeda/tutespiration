@@ -41,6 +41,11 @@
         font-weight: 600;
       }
 
+      .alert-banner {
+        margin-bottom: 0;
+        padding-left: 4%;
+      }
+
       .layout-band-form {
         background-color: #338bc5;
       }
@@ -142,6 +147,18 @@
         </div>
       </div>
       <!-- end MIT branding -->
+      {% if error %}
+        <div class="alert alert-banner error" role="alert">
+          Something went wrong. It's probably my fault.
+        </div>
+      {% endif %}
+
+      {% if noquote %}
+        <div class="alert alert-banner warning" role="alert">
+          No one has written a thesis about that. There is no inspiration for
+          you. The lone and level sands stretch far away.
+        </div>
+      {% endif %}
 
       {% if quote %}
         <!-- begin main content -->
