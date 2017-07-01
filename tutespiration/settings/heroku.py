@@ -8,5 +8,10 @@ DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-DEBUG = False
+PROTO_DEBUG = os.environ.get('DJANGO_DEBUG', None)
+if PROTO_DEBUG:
+    DEBUG = True
+else:
+    DEBUG = False
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
