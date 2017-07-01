@@ -51,7 +51,7 @@ class Tutespiration(TemplateView):
         query = request.POST['query']
         quote = self.get_quote(query)
         font_index = random.randint(0, len(self.fonts))
-        font = self.fonts['font_index']
+        font = self.fonts[font_index]
         return self.render_to_response(self.get_context_data(
             quote=quote,
             font=mark_safe(font),
