@@ -1,0 +1,188 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js lte-ie9" lang="en"><![endif]-->
+<!--[if !(IE 8) | !(IE 9) ]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutespiration</title>
+
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="apple-touch-icon" href="/static/img/favicon.png">
+
+    <!-- mitlib-style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic&subset=latin,latin-ext" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" />
+    <style type="text/css">
+      body {
+        background-color: white;
+        font-size: 16px;
+        font-family: "Open Sans", Helvetica, sans-serif;
+      }
+
+      @media only screen and (min-width:769px) {
+        body {
+          margin: 0 32.5px;
+        }
+      }
+
+      .nav-logo img {
+        max-height: 4.75rem;
+      }
+
+      h1.nav-logo {
+        font-size: 150%;
+        font-weight: 600;
+      }
+
+      .layout-band-form {
+        background-color: #338bc5;
+      }
+
+      #search-all {
+        background-color: white;
+        padding: 15px 3%;
+      }
+
+      #search-all form {
+        margin-top: 0;
+      }
+
+      #search-all label {
+        color: #111;
+        font-size: 14.4px;
+        font-weight: 600;
+        margin-bottom: 0.05em;
+      }
+
+      #search-all input {
+        width: 99%;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .wrap-flex {
+          display: flex;
+          align-items: baseline;
+        }
+        .flex-left {
+          flex: 3;
+          flex-grow: 3;
+          flex-shrink: 1;
+          flex-basis: 0%;
+        }
+        .flex-right {
+          margin-top: .25rem;
+        }
+      }
+
+      .wrap-banner-text {
+        background-color: #9c3273;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16.8px;
+        color: #E5CEDC;
+        text-align: right;
+        padding: 5px 15px;
+      }
+
+      .wrap-banner-text a {
+        color: white;
+      } 
+
+      .wrap-banner-text p {
+        padding: 0;
+        margin: 0;
+      } 
+    </style>
+  </head>
+
+  <body>
+    <!-- begin MIT branding -->
+    <div class="wrap-page">
+      <div class="wrap-outer-header layout-band">
+        <div class="wrap-header">
+          <header class="header-site header-slim" role="banner">
+            <div class="wrap-header-core">
+              <h1 class="name-site group nav-logo">
+                <img src="static/img/geodesic.png">
+                'tutespiration
+              </h1>
+            </div>
+          </header>
+        </div>
+      </div>
+      <!-- end MIT branding -->
+
+      <!-- begin form area -->
+      <div class="wrap-outer-header layout-band layout-band-form">
+        <div class="wrap-content layout-3q1q">
+          <div id="search-all">
+            <form class="form search-bento" action="https://lib.mit.edu/search/bento" method="get" data-target="bento">
+              <label for="searchinput-bento">Search MIT theses...for inspiration</label>
+              <div class="wrap-flex">
+                <div class="flex-left">
+                  <input class="field field-text" type="text" id="searchinput-bento" name="q" placeholder="ex. carbon nanotubes, journal of the american medical association">
+                </div>
+                <div class="flex-right">
+                  <input class="button button-primary" type="submit" value="Search">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="wrap-banner-text">
+        <p>The actual MIT libraries can search a lot more stuff! <a href="https://libraries.mit.edu/about-quick-search">Learn more »</a></p>
+      </div>
+      <!-- end form area -->
+
+      {% if main_content %}
+        <!-- begin main content -->
+        <div class="wrap-outer-content layout-band">
+          <div class="wrap-content layout-3q1q">
+            <main id="content-main" class="content-main" role="main">
+            </main>
+          </div>
+        </div>
+        <!-- end main content -->        
+      {% endif %}
+
+      <!-- begin footer-->
+      <div class="wrap-outer-footer-institute layout-band">
+        <div class="wrap-footer-institute">
+          <footer class="footer-info-institute" aria-label="footer" role="contentinfo">
+            <div class="about-mit">
+              <span class="item">Coded by <a href="https://andromedayelton.com">Andromeda Yelton</a></span>
+            </div>
+            <div class="about-mit">
+              <span class="item">Inspired by <a href="http://inspirobot.me/">Inspirobot</a> and <a href="https://twitter.com/aamcnamara/status/880826274662449152">Alena McNamara</a></span>
+            </div>
+            <div class="about-mit">
+              <span class="item">MIT Libraries styles by <a href="https://github.com/frrrances">Frances Botsford</a></span>
+            </div>
+            <div class="about-mit">
+              <span class="item">Geodesic dome logo by <a href="https://thenounproject.com/marialuisa.iborra/">Lluisa Iborra</a> used under the <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution License</a>.</span>
+            </div>
+            <div class="about-mit">
+              <span class="item">Not in any way sponsored by the MIT Libraries (although I do work there and we're gonna change the world).</span>
+            </div>
+          </footer><!-- end .footer-info-institute -->
+        </div>
+      </div>
+    </div>
+    <!-- end footer-->
+
+    
+
+    
+    
+  </body>
+</html>
