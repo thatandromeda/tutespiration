@@ -10,6 +10,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', Tutespiration.as_view()),
-    url(r'^(?P<font>\d+)/(?P<pk>\d+)/(?P<photo>[\d\w\-_]+)/$',
-        CitableTutespiration.as_view()),
+    url(r'^(?P<pk>\d+)/$',
+        CitableTutespiration.as_view(), name='citable'),
 ]

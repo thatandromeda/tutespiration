@@ -167,11 +167,11 @@
           <div class="wrap-content layout-3q1q">
             <main id="content-main" class="content-main" role="main">
               <div class="tutespiration">
-                <img src="{{ image_url }}" alt="{{ alt_text }}">
+                <img src="{{ photo.image_url }}" alt="{{ photo.alt_text }}">
                 <div class="quote">{{ quote.text }}</div>
               </div>
               <div class="tutespiration-credit">
-                &lt;Photo by <a href="https://unsplash.com/@{{ credit_userid }}?utm_source={{ client_id }}&utm_medium=referral&utm_campaign=api-credit">{{ credit_name }}</a> / <a href="https://unsplash.com?utm_source=Tutespiration&utm_medium=referral&utm_campaign=api-credit">Unsplash</a>&gt;
+                &lt;Photo by <a href="https://unsplash.com/@{{ photo.credit_userid }}?utm_source={{ client_id }}&utm_medium=referral&utm_campaign=api-credit">{{ photo.credit_name }}</a> / <a href="https://unsplash.com?utm_source=Tutespiration&utm_medium=referral&utm_campaign=api-credit">Unsplash</a>&gt;
                 &mdash;
                 &lt;<a href="{{ quote.url }}">read the thesis!</a>&gt;
                 &mdash;
