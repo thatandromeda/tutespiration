@@ -147,9 +147,10 @@
         </div>
       </div>
       <!-- end MIT branding -->
-      {% if error %}
+      {% if fail %}
         <div class="alert alert-banner error" role="alert">
-          Something went wrong. It's probably my fault.
+          Something went wrong. It's probably my fault (or else we've exceeded
+          the rate limit on the Unsplash API; come back later).
         </div>
       {% endif %}
 
