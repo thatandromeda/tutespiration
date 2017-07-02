@@ -1,7 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from tutespiration.core.views import Tutespiration, CitableTutespiration
+from tutespiration.core.views import Tutespiration, CitableTutespiration, custom404
 
 urlpatterns = [
     # Examples:
@@ -13,3 +13,5 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/$',
         CitableTutespiration.as_view(), name='citable'),
 ]
+
+handler404 = custom404

@@ -2,6 +2,8 @@ import json
 import random
 import requests
 
+from django.http import HttpResponseNotFound
+from django.template import loader
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.utils.html import mark_safe
@@ -106,3 +108,20 @@ class CitableTutespiration(PostMixin, DetailView):
         context['quote'] = inspiration.quote
         context['photo'] = inspiration.photo
         return context
+
+
+def custom404(request, **kwargs):
+    print 'was called'
+    template = loader.get_template('tutespiration.html')
+    context = {}
+    context['is_404'] = True
+
+    insp = Inspiration.objects.get(pk=8)
+    context['quote'] = insp.quote
+    context['photo'] = insp.photo
+    context['font'] = mark_safe(insp.font)
+
+    body = template.render(context, request)
+    content_type = 'text/html'
+
+    return HttpResponseNotFound(body, content_type=content_type)

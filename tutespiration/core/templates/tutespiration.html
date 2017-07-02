@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tutespiration</title>
 
-    <link rel="shortcut icon" href="/static/img/favicon.png">
-    <link rel="apple-touch-icon" href="/static/img/favicon.png">
+    <link rel="shortcut icon" href="/static/img/geodesic.png">
+    <link rel="apple-touch-icon" href="/static/img/geodesic.png">
 
     <!-- mitlib-style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
@@ -147,6 +147,14 @@
         </div>
       </div>
       <!-- end MIT branding -->
+      {% if is_404 %}
+        <div class="alert alert-banner error" role="alert">
+          <strong>404</strong>
+          Like the diffusion data for LaA10 3, the thing you're looking for
+          could not be found.
+        </div>
+      {% endif %}
+
       {% if fail %}
         <div class="alert alert-banner error" role="alert">
           Something went wrong. It's probably my fault (or else we've exceeded
