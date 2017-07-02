@@ -31,7 +31,10 @@ for doc in DOC_LIST:
     url = get_url_from_file(doc)
     with open(full_path, 'r') as doc_contents:
         for sentence in doc_contents.read().split('.'):
+            # Deal with hyphenated line breaks, which we do not want.
+            sentence = re.sub(r'(\w)\-\s(\w)', r'\1\2', sentence)
+            # Get rid of any remaining newlines.
             sentence = sentence.replace('\n', ' ').strip()
             if is_valid(sentence):
-                Quote.objects.create(text=sentence.replace('\n', ''), url=url)
+                Quote.objects.create(text=sentence, url=url)
 
