@@ -111,7 +111,6 @@ class CitableTutespiration(PostMixin, DetailView):
 
 
 def custom404(request, **kwargs):
-    print 'was called'
     template = loader.get_template('tutespiration.html')
     context = {}
     context['is_404'] = True
