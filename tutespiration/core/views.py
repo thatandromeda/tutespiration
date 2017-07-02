@@ -63,11 +63,16 @@ class Tutespiration(TemplateView):
         except:
             return self.render_to_response(self.get_context_data(fail=True))
 
+        permalink = '/{font}/{pk}/{photo}'.format(font=font_index,
+                                                  pk=quote.pk,
+                                                  photo=photo['photo_id'])
+
         return self.render_to_response(self.get_context_data(
             quote=quote,
             font=mark_safe(font),
             client_id=API_CLIENT_ID,
             font_index=font_index,
+            permalink=permalink,
             **photo))
 
 
@@ -89,22 +94,22 @@ class Tutespiration(TemplateView):
 class CitableTutespiration(Tutespiration):
 
     def get_response(self):
-        api_url = 'https://api.unsplash.com/photos/'
+        api_url = 'https://api.unsplash.com/photos/%s' % self.kwargs['photo']
         params = dict(
-            id=self.kwargs['photo'],
             client_id=API_CLIENT_ID,
         )
         headers = {'Accept-Version': 'v1'}
 
         resp = requests.get(url=api_url, params=params, headers=headers)
         resp.raise_for_status()
-        data = json.loads(resp.text)[0]
+        data = json.loads(resp.text)
 
         return data
 
 
     def get_context_data(self, **kwargs):
         context = super(CitableTutespiration, self).get_context_data(**kwargs)
+        context['permalink'] = self.request.path
 
         font_index = int(self.kwargs['font'])
         try:
