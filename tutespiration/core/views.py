@@ -105,11 +105,23 @@ class CitableTutespiration(Tutespiration):
 
     def get_context_data(self, **kwargs):
         context = super(CitableTutespiration, self).get_context_data(**kwargs)
+
         font_index = int(self.kwargs['font'])
-        assert font_index >= 0
-        assert font_index < len(self.fonts)
+        try:
+            assert font_index >= 0
+            assert font_index < len(self.fonts)
+        except AssertionError:
+            context['fail'] = True
+            return self.render_to_response(context)
+
         context['font_index'] = font_index
         context['font'] = mark_safe(self.fonts[font_index])
-        context['quote'] = Quote.objects.get(pk=self.kwargs['pk'])
+
+        try:
+            context['quote'] = Quote.objects.get(pk=self.kwargs['pk'])
+        except Quote.DoesNotExist:
+            context['noquote'] = True
+            return self.render_to_response(context)
+
         context.update(**self.get_photo())
         return context
