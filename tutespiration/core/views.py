@@ -56,7 +56,7 @@ class Tutespiration(TemplateView):
         if not quote:
             return self.render_to_response(self.get_context_data(noquote=True))
 
-        font_index = random.randint(0, len(self.fonts))
+        font_index = random.randint(0, len(self.fonts) - 1)
         font = self.fonts[font_index]
         try:
             photo = self.get_photo()
