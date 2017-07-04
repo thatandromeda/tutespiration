@@ -98,6 +98,15 @@ class CitableTutespiration(PostMixin, DetailView):
     template_name = 'tutespiration.html'
     model = Inspiration
 
+    def get_object(self, queryset=None):
+        if 'pk' in self.kwargs:  # default detailview behavior
+            return super(CitableTutespiration, self).get_object(queryset)
+        else:  # for /random
+            queryset = self.get_queryset()
+            count = queryset.count()
+            which = random.randint(0, count - 1)
+            return queryset[which]
+
     def get_context_data(self, **kwargs):
         context = super(CitableTutespiration, self).get_context_data(**kwargs)
         inspiration = self.get_object()

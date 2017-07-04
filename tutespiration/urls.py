@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^$', Tutespiration.as_view()),
     url(r'^(?P<pk>\d+)/$',
         CitableTutespiration.as_view(), name='citable'),
+    url(r'^random/$',
+        CitableTutespiration.as_view(), name='random'),
 ]
 
 handler404 = custom404

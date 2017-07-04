@@ -66,8 +66,24 @@
         margin-bottom: 0.05em;
       }
 
-      #search-all input {
+      #searchinput {
         width: 99%;
+      }
+
+      .button-secondary {
+        background-color: #AD9D8A;
+        color: #fafafa;
+        border: 1px solid #AD9D8A;
+      }
+
+      .button-secondary:hover {
+        background-color: #c6b6a3;
+        border-color: #c6b6a3;        
+      }
+
+      .button-primary:hover {
+        background-color: #1AA2EA;
+        border-color: #1AA2EA;        
       }
 
       @media only screen and (min-width: 768px) {
@@ -213,7 +229,8 @@
                   <input class="field field-text" type="text" id="searchinput" name="query" placeholder="ex. carbon nanotubes, journal of the american medical association">
                 </div>
                 <div class="flex-right">
-                  <input class="button button-primary" type="submit" value="Search">
+                  <input class="button button-primary button-half" type="submit" value="Search">
+                  <a href="{% url 'random' %}" class="button button-secondary button-half">Random</a>
                 </div>
               </div>
             </form>
