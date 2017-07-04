@@ -74,6 +74,7 @@
         background-color: #AD9D8A;
         color: #fafafa;
         border: 1px solid #AD9D8A;
+        text-align: center;
       }
 
       .button-secondary:hover {
@@ -84,6 +85,12 @@
       .button-primary:hover {
         background-color: #1AA2EA;
         border-color: #1AA2EA;        
+      }
+
+      @media (max-width: 480px) {
+        .flex-right .button {
+          width: 49%;
+        }
       }
 
       @media only screen and (min-width: 768px) {
