@@ -110,7 +110,7 @@ class CitableTutespiration(PostMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super(CitableTutespiration, self).get_context_data(**kwargs)
         inspiration = self.get_object()
-        context['permalink'] = self.get_object().get_absolute_url()
+        context['permalink'] = inspiration.get_absolute_url()
 
         context['font_index'] = inspiration.font_index
         context['font'] = mark_safe(inspiration.font)
